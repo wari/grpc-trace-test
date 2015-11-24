@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package grpctest;
+
+message EmptyRequest {};
+
+message EmptyResponse {};
+
+service Working {
+    rpc ThisWorks(EmptyRequest) returns (EmptyResponse) {};
+}
+
+service NotWorking {
+    rpc Unimplemented(EmptyRequest) returns (EmptyResponse) {};
+}
